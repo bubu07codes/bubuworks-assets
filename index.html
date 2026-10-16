@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BubuWorks</title>
+    <title>BubuWorks — Unity Asset Developer</title>
     <style>
+      :root {
+        --bg: #09090b;
+        --card: #121215;
+        --border: #27272a;
+        --text-main: #f4f4f5;
+        --text-muted: #a1a1aa;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -12,86 +22,141 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-        padding: 40px 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 60px 24px;
+        -webkit-font-smoothing: antialiased;
       }
 
       .wrapper {
-        max-width: 600px;
+        max-width: 720px;
+        width: 100%;
         margin: 0 auto;
       }
 
       header {
-        margin-bottom: 32px;
-        padding-bottom: 16px;
-        border-bottom: 2px solid #374151;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 48px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
       }
 
       h1 {
-        font-size: 28px;
-        color: #ffffff;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--text-main);
         margin-bottom: 4px;
       }
 
       p.tagline {
-        color: #9ca3af;
-        font-size: 15px;
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .badge {
+        font-size: 12px;
+        color: var(--text-muted);
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      .intro {
+        margin-bottom: 40px;
       }
 
       h2 {
-        font-size: 18px;
-        color: #ffffff;
-        margin-top: 24px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--text-main);
+        margin-top: 36px;
         margin-bottom: 12px;
       }
 
       p {
-        color: #d1d5db;
+        color: var(--text-muted);
         font-size: 15px;
         line-height: 1.6;
         margin-bottom: 16px;
       }
 
       ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        color: #d1d5db;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 24px;
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 36px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 12px;
       }
 
       li {
-        margin-bottom: 6px;
+        background-color: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        color: var(--text-muted);
+        font-size: 14px;
+        line-height: 1.4;
       }
 
       .contact-box {
-        margin-top: 32px;
-        padding-top: 20px;
-        border-top: 2px solid #374151;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.15s ease;
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+
+      footer {
+        max-width: 720px;
+        width: 100%;
+        margin: 60px auto 0 auto;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--text-muted);
+        display: flex;
+        justify-content: space-between;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>BubuWorks</h1>
-        <p class="tagline">Asset Developer Page</p>
+        <div>
+          <h1>BubuWorks</h1>
+          <p class="tagline">Unity Developer &amp; Tooling</p>
+        </div>
+        <div class="badge">Asset Store</div>
       </header>
 
-      <header>
+      <div class="intro">
         <p>
-          I have been a Unity developer for over 7 years, specializing mainly in
-          game development and now newly in asset creation.
+          Unity developer specializing in game systems, clean architecture, and developer tooling.
         </p>
-      </header>
+      </div>
 
       <main>
         <h2>EasySaveModular</h2>
@@ -105,7 +170,7 @@
           <li>AES Encryption &amp; GZip data compression</li>
           <li>Automatic backup recovery to prevent corrupted saves</li>
           <li>Compatible with PC, Mobile, WebGL, and Consoles</li>
-          <li>Built for any new Unity version</li>
+          <li>Built for modern Unity versions</li>
         </ul>
 
         <div class="contact-box">
@@ -118,5 +183,10 @@
         </div>
       </main>
     </div>
+
+    <footer>
+      <span>&copy; BubuWorks</span>
+      <span>Unity Asset Creator</span>
+    </footer>
   </body>
 </html>
